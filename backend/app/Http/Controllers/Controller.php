@@ -27,6 +27,14 @@ use OpenApi\Annotations as OA;
  *     name="Projects",
  *     description="API Endpoints of Projects"
  * )
+ *
+ * @OA\SecurityScheme(
+ *     securityScheme="sanctum",
+ *     type="http",
+ *     scheme="bearer",
+ *     bearerFormat="JWT",
+ *     description="Enter your bearer token in the format **Bearer &lt;token&gt;**"
+ * )
  */
 abstract class Controller
 {
