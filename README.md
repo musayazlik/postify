@@ -23,7 +23,7 @@ Postify is a comprehensive social media management platform designed to help use
 - **Icons**: [Lucide React](https://lucide.dev/)
 
 ### Backend
-- **Framework**: [Laravel 11](https://laravel.com/)
+- **Framework**: [Laravel 12](https://laravel.com/)
 - **Authentication**: Laravel Sanctum (Cookie-based auth)
 - **API Documentation**: L5-Swagger (OpenAPI)
 - **Database**: PostgreSQL / MySQL (configurable)

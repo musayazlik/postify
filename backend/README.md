@@ -1,12 +1,12 @@
 # Postify Backend
 
-This is the backend API for the Postify Social Media Management Platform, built with [Laravel 11](https://laravel.com/).
+This is the backend API for the Postify Social Media Management Platform, built with [Laravel 12](https://laravel.com/).
 
 ![Postify Backend](https://placehold.co/1200x600/ef3b2d/ffffff?text=Laravel+API)
 
 ## 🚀 Key Features
 
-- **Framework**: Laravel 11
+- **Framework**: Laravel 12
 - **Authentication**: Laravel Sanctum (Stateful & Token-based)
 - **Documentation**: L5-Swagger (OpenAPI)
 - **Database**: PostgreSQL / MySQL Support
