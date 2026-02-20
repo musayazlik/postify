@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden w-full py-24 md:py-32 lg:py-48 bg-white dark:bg-black">
+    <section className="relative overflow-hidden w-full py-24 md:py-32 lg:py-48 bg-white dark:bg-gray-950">
       {/* Background Gradient */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] opacity-30 dark:bg-black dark:opacity-20" />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950 [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] opacity-30 dark:opacity-15" />
       
       {/* Animated Content */}
       <div className="container px-4 md:px-6 mx-auto text-center z-10 relative">
@@ -31,12 +31,12 @@ export function HeroSection() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/auth/register">
-              <Button size="lg" className="h-12 px-8 text-lg font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-xl shadow-indigo-200 border-0 rounded-full transition-all hover:scale-105">
+              <Button size="lg" className="h-12 px-8 text-lg font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-xl shadow-indigo-200 dark:shadow-indigo-900/30 border-0 rounded-full transition-all hover:scale-105">
                 Get Started for Free
               </Button>
             </Link>
             <Link href="#features">
-              <Button variant="outline" size="lg" className="h-12 px-8 text-lg font-medium border-2 hover:bg-gray-50 rounded-full transition-all hover:scale-105">
+              <Button variant="outline" size="lg" className="h-12 px-8 text-lg font-medium border-2 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full transition-all hover:scale-105 border-gray-300 dark:border-gray-600 dark:text-gray-100">
                 Learn More
               </Button>
             </Link>

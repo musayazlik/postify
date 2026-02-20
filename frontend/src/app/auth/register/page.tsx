@@ -46,35 +46,32 @@ export default function RegisterPage() {
 
 			const { user } = data;
 
-			// Ideally login the user immediately, or just redirect to verify
-			// If backend requires verification before login, user might be null or restricted
-			// But since we have the token in cookie now, we are "logged in" as far as the API is concerned
 			if (user) {
 				setUser(user);
 			}
 
 			toast.success('Registration successful! Please check your email for verification code.');
 			router.push('/auth/verify');
-		} catch (error: any) { // eslint-disable-line @typescript-eslint/no-explicit-any
-			toast.error(error.message || 'Registration failed');
+		} catch (error: unknown) {
+			toast.error(error instanceof Error ? error.message : 'Registration failed');
 		} finally {
 			setLoading(false);
 		}
 	};
 
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
-			<Card className="w-full max-w-sm">
+		<div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950 px-4 py-12 sm:px-6 lg:px-8">
+			<Card className="w-full max-w-sm bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
 				<CardHeader>
-					<CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
-					<CardDescription className="text-center">
+					<CardTitle className="text-2xl font-bold text-center text-gray-900 dark:text-white">Create an account</CardTitle>
+					<CardDescription className="text-center text-gray-500 dark:text-gray-400">
 						Enter your details below to create your account
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form onSubmit={handleSubmit} className="space-y-4">
 						<div className="space-y-2">
-							<Label htmlFor="name">Full Name</Label>
+							<Label htmlFor="name" className="text-gray-700 dark:text-gray-300">Full Name</Label>
 							<Input
 								id="name"
 								name="name"
@@ -83,10 +80,11 @@ export default function RegisterPage() {
 								required
 								value={formData.name}
 								onChange={handleChange}
+								className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
 							/>
 						</div>
 						<div className="space-y-2">
-							<Label htmlFor="email">Email</Label>
+							<Label htmlFor="email" className="text-gray-700 dark:text-gray-300">Email</Label>
 							<Input
 								id="email"
 								name="email"
@@ -95,10 +93,11 @@ export default function RegisterPage() {
 								required
 								value={formData.email}
 								onChange={handleChange}
+								className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
 							/>
 						</div>
 						<div className="space-y-2">
-							<Label htmlFor="password">Password</Label>
+							<Label htmlFor="password" className="text-gray-700 dark:text-gray-300">Password</Label>
 							<Input
 								id="password"
 								name="password"
@@ -106,10 +105,11 @@ export default function RegisterPage() {
 								required
 								value={formData.password}
 								onChange={handleChange}
+								className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
 							/>
 						</div>
 						<div className="space-y-2">
-							<Label htmlFor="password_confirmation">Confirm Password</Label>
+							<Label htmlFor="password_confirmation" className="text-gray-700 dark:text-gray-300">Confirm Password</Label>
 							<Input
 								id="password_confirmation"
 								name="password_confirmation"
@@ -117,17 +117,18 @@ export default function RegisterPage() {
 								required
 								value={formData.password_confirmation}
 								onChange={handleChange}
+								className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
 							/>
 						</div>
-						<Button type="submit" className="w-full" disabled={loading}>
+						<Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-700" disabled={loading}>
 							{loading ? 'Creating account...' : 'Sign up'}
 						</Button>
 					</form>
 				</CardContent>
 				<CardFooter className="flex justify-center">
-					<p className="text-sm text-gray-500">
+					<p className="text-sm text-gray-500 dark:text-gray-400">
 						Already have an account?{' '}
-						<Link href="/auth/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+						<Link href="/auth/login" className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
 							Sign in
 						</Link>
 					</p>
